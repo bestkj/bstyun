@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration >
+    <classPathEntry 
+        location="C:/Users/lq/.m2/repository/mysql/mysql-connector-java/5.1.31/mysql-connector-java-5.1.31.jar" />
   <context id="context1" >
-    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/trainingdb" userId="root" password="123456" />
-    <javaModelGenerator targetPackage="com.insigma.pojo" targetProject="OnlineRegistration" />
-    <sqlMapGenerator targetPackage="com.insigma.mapper" targetProject="OnlineRegistration" />
-<!--     <javaClientGenerator targetPackage="com.insigma.mapper" targetProject="OnlineRegistration" type="XMLMAPPER" /> -->
+      
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/bstyundb" userId="root" password="root" />
+    <javaModelGenerator targetPackage="com.chnbst.bstyun.model.pojo" targetProject="bstyun-java" />
+    <sqlMapGenerator targetPackage="com.chnbst.bstyun.mapper" targetProject="bstyun-java" />
+    <javaClientGenerator targetPackage="com.chnbst.bstyun.mapper" targetProject="bstyun-java" type="XMLMAPPER" />
 
-<!--     <table tableName="t_accessory" enableCountByExample="false" enableUpdateByExample="false" -->
-<!-- 	enableDeleteByExample="false" enableSelectByExample="false" -->
-<!-- 	selectByExampleQueryId="false"></table> -->
+    <table tableName="tb_user"  enableCountByExample="false" enableUpdateByExample="false"
+	enableDeleteByExample="false" enableSelectByExample="false"
+	selectByExampleQueryId="false"></table>
 <!--     <table tableName="t_admin" enableCountByExample="false" enableUpdateByExample="false" -->
 <!-- 	enableDeleteByExample="false" enableSelectByExample="false" -->
 <!-- 	selectByExampleQueryId="false"></table> -->
@@ -46,9 +49,9 @@
 <!--     <table tableName="t_remark" enableCountByExample="false" enableUpdateByExample="false" -->
 <!-- 	enableDeleteByExample="false" enableSelectByExample="false" -->
 <!-- 	selectByExampleQueryId="false"></table> -->
-    <table tableName="t_reply" enableCountByExample="false" enableUpdateByExample="false"
-	enableDeleteByExample="false" enableSelectByExample="false"
-	selectByExampleQueryId="false"></table>
+<!--     <table tableName="t_reply" enableCountByExample="false" enableUpdateByExample="false" -->
+<!-- 	enableDeleteByExample="false" enableSelectByExample="false" -->
+<!-- 	selectByExampleQueryId="false"></table> -->
 <!--     <table tableName="t_score" enableCountByExample="false" enableUpdateByExample="false" -->
 <!-- 	enableDeleteByExample="false" enableSelectByExample="false" -->
 <!-- 	selectByExampleQueryId="false"></table> -->

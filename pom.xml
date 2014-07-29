@@ -7,81 +7,74 @@
   <modules>
   	<module>bstyun-java</module>
   	<module>bstyun-web</module>
+  	<module>bstyun-core</module>
   </modules>
   
   <properties>
-  <spring.version>4.0.6.RELEASE</spring.version>
-</properties>
+	  <!--指定Maven用什么编码来读取源码及文档 -->
+	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  <!--指定Maven用什么编码来呈现站点的HTML文件 -->
+	  <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	  <mysql.version>5.1.31</mysql.version>
+	  <spring.version>4.0.6.RELEASE</spring.version>
+	  <mybatis.version>3.2.7</mybatis.version>
+	  <mybatis-spring.version>1.2.2</mybatis-spring.version>
+  </properties>
 
   <dependencies>
-  <!-- Spring 核心包 -->
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-context-support</artifactId>
-        <version>${spring.version}</version>
-    </dependency>
-    <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-webmvc</artifactId>
-    	<version>${spring.version}</version>
-    </dependency>
-    <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-jdbc</artifactId>
-    	<version>${spring.version}</version>
-    </dependency>
+	  <!-- Spring 核心包 -->
+	    <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-context</artifactId>
+	        <version>${spring.version}</version>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-context-support</artifactId>
+	        <version>${spring.version}</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org.springframework</groupId>
+	    	<artifactId>spring-webmvc</artifactId>
+	    	<version>${spring.version}</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org.springframework</groupId>
+	    	<artifactId>spring-jdbc</artifactId>
+	    	<version>${spring.version}</version>
+	    </dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aspects</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<!-- mysql 驱动包 -->
+ 	<!-- mysql 驱动包 -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.31</version>
+			<version>${mysql.version}</version>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- mybatis 核心包 -->
+  		<!-- mybatis 核心包 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.2.7</version>
+			<version>${mybatis.version}</version>
 		</dependency>
+		<!-- mybatis spring 插件包 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
-			<version>1.2.2</version>
+			<version>${mybatis-spring.version}</version>
 		</dependency>
+		
 		<!-- logback 核心包 -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.1.2</version>
 		</dependency>
-		<dependency>
-			<groupId>org.logback-extensions</groupId>
-			<artifactId>logback-ext-spring</artifactId>
-			<version>0.1.2</version>
-		</dependency>
-		<!-- Spring json处理 -->
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.13</version>
-		</dependency>
-		<!-- jstl标准标签库 -->
-		<dependency>
-			<groupId>taglibs</groupId>
-			<artifactId>standard</artifactId>
-			<version>1.1.2</version>
-			<scope>runtime</scope>
-		</dependency>
+		
 		<!-- junit 测试 -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -89,7 +82,53 @@
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.0.1</version>
+		</dependency>
   </dependencies>
+  <dependencyManagement>
+  	<dependencies>
+  	
+  	<!-- Spring json处理 -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		<!-- logback Spring 插件 -->
+		<dependency>
+			<groupId>org.logback-extensions</groupId>
+			<artifactId>logback-ext-spring</artifactId>
+			<version>0.1.2</version>
+		</dependency>
+  		
+  		<!-- jstl标准标签库 -->
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- jsp -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+  	</dependencies>
+  </dependencyManagement>
   <build>
     <finalName>bstyun</finalName>
 	    <plugins>

@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
 <configuration> 
 	<typeAliases>
-		<package name="com.insigma.pojo"/>
-		<package name="com.insigma.pojo.vo"/>
+		<package name="com.chnbst.bstyun.model.pojo"/>
+		<package name="com.chnbst.bstyun.model.vo"/>
 	</typeAliases>
 </configuration>

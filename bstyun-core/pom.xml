@@ -5,12 +5,5 @@
     <artifactId>bstyun</artifactId>
     <version>1.0.0</version>
   </parent>
-  <artifactId>bstyun-java</artifactId>
-  <dependencies>
-  	<dependency>
-  		<groupId>com.chnbst</groupId>
-  		<artifactId>bstyun-core</artifactId>
-  		<version>1.0.0</version>
-  	</dependency>
-  </dependencies>
+  <artifactId>bstyun-core</artifactId>
 </project>
